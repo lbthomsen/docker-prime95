@@ -16,6 +16,8 @@ RUN curl -SL http://www.mersenne.org/ftp_root/gimps/p95v287.linux64.tar.gz | tar
 COPY runprime /
 RUN chmod +x ./runprime
 
+RUN mkdir prime
+
 CMD ["/bin/bash", "-c", "./runprime"]
 
 

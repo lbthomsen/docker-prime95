@@ -2,7 +2,9 @@
 
 [ -z "$USER" ] && USER=lbthomsen
 
-cat <<-EOF > prime.txt
+[ -d "prime" ] || mkdir prime
+
+cat <<-EOF > prime/prime.txt
 V24OptionsConverted=1
 WGUID_version=2
 StressTester=0
@@ -17,10 +19,10 @@ Debug=0
 ProxyHost=
 EOF
 
-cat <<-EOF > local.txt
+cat <<-EOF > prime/local.txt
 ComputerID=$HOSTNAME
 EOF
 
-mprime
+mprime -wprime
 
 
