@@ -1,6 +1,6 @@
 FROM debian:latest
 
-RUN apt-get -y update && apt-get install -y vim curl gzip
+RUN apt-get -y update && apt-get install -y curl
 
 RUN curl -SL http://www.mersenne.org/ftp_root/gimps/p95v287.linux64.tar.gz | tar -xz mprime && mv mprime /usr/sbin && chmod +x /usr/sbin/mprime
 
