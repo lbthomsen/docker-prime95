@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#
+# Copyright (c) 2015 Lars Boegild Thomsen <lth@cow.dk>
+#
+
 [ -z "$USER" ] && USER=lbthomsen
 
 [ -d "prime" ] || mkdir prime
@@ -24,5 +28,4 @@ ComputerID=$HOSTNAME
 EOF
 
 mprime -wprime
-
 
