@@ -10,11 +10,11 @@ RUN mkdir -p /var/run/sshd
 
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
-RUN echo "debian" >/etc/hostname
 
-RUN curl -SL http://www.mersenne.org/ftp_root/gimps/p95v287.linux64.tar.gz | tar -xJC mprime && mv mprime /usr/sbin
+RUN curl -SL http://www.mersenne.org/ftp_root/gimps/p95v287.linux64.tar.gz | tar -xz mprime && mv mprime /usr/sbin && chmod +x /usr/sbin/mprime
 
-EXPOSE 22
-CMD ["/usr/sbin/sshd", "-D"]
+COPY runprime /
+
+CMD ["/bin/bash", "-c", "runprime"]
 
 
