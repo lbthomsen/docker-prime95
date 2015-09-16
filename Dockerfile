@@ -14,7 +14,8 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 RUN curl -SL http://www.mersenne.org/ftp_root/gimps/p95v287.linux64.tar.gz | tar -xz mprime && mv mprime /usr/sbin && chmod +x /usr/sbin/mprime
 
 COPY runprime /
+RUN chmod +x ./runprime
 
-CMD ["/bin/bash", "-c", "runprime"]
+CMD ["/bin/bash", "-c", "./runprime"]
 
 

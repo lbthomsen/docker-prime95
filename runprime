@@ -2,18 +2,24 @@
 
 [ -z "$USER" ] && USER=lbthomsen
 
-echo "V24OptionsConverted=1" >prime.txt
-echo "WGUID_version=2" >>prime.txt
-echo "StressTester=0" >>prime.txt
-echo "UsePrimenet=1" >>prime.txt
-echo "DialUp=0" >>prime.txt
-echo "V5UserID=$USER" >>prime.txt
-echo "AskedAboutMemory=1" >>prime.txt
-echo "WorkPreference=0" >>prime.txt
-echo "" >>prime.txt
-echo "[PrimeNet]" >>prime.txt
-echo "Debug=0" >>prime.txt
-echo "ProxyHost=" >>prime.txt
+cat <<-EOF > prime.txt
+V24OptionsConverted=1
+WGUID_version=2
+StressTester=0
+UsePrimenet=1
+DialUp=0
+V5UserID=$USER
+AskedAboutMemory=1
+WorkPreference=0
+
+[PrimeNet]
+Debug=0
+ProxyHost=
+EOF
+
+cat <<-EOF > local.txt
+ComputerID=$HOSTNAME
+EOF
 
 mprime
 
