@@ -8,7 +8,8 @@
 
 [ -d "prime" ] || mkdir prime
 
-cat <<-EOF > prime/prime.txt
+# Don't overwrite prime.txt file if it already exists!
+[ -f "prime/prime.txt" ] || { cat <<-EOF > prime/prime.txt
 V24OptionsConverted=1
 WGUID_version=2
 StressTester=0
@@ -22,10 +23,13 @@ WorkPreference=0
 Debug=0
 ProxyHost=
 EOF
+}
 
-cat <<-EOF > prime/local.txt
+# Don't overwrite local.txt file if it already exists!
+[ -f "prime/local.txt" ] || { cat <<-EOF > prime/local.txt
 ComputerID=$HOSTNAME
 EOF
+}
 
 mprime -wprime
 
