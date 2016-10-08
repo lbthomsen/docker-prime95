@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Copyright (c) 2016 Lars Boegild Thomsen <lth@cow.dk>
+# Written by Lars Boegild Thomsen <lth@cow.dk>
 #
 
 [ -z "$USER" ] && USER=lbthomsen
