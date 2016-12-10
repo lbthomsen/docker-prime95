@@ -1,6 +1,6 @@
 FROM thingmesh/base:latest
 
-RUN curl -SL http://www.mersenne.org/ftp_root/gimps/p95v289.linux64.tar.gz | tar -xz mprime && mv mprime /usr/sbin && chmod +x /usr/sbin/mprime
+RUN curl -SL http://www.mersenne.org/ftp_root/gimps/p95v2810.linux64.tar.gz | tar -xz mprime && mv mprime /usr/sbin && chmod +x /usr/sbin/mprime
 
 COPY runprime /
 RUN chmod +x ./runprime
