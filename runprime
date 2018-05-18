@@ -16,12 +16,18 @@ StressTester=0
 UsePrimenet=1
 DialUp=0
 V5UserID=$USER
-AskedAboutMemory=1
-WorkPreference=0
+DiskWriteTime=15
+NetworkRetryTime=5
+NetworkRetryTime2=25
+DaysOfWork=2
+DaysBetweenCheckins=          1
 
 [PrimeNet]
 Debug=0
 ProxyHost=
+
+[Worker #1]
+WorkPreference=0
 EOF
 }
 
